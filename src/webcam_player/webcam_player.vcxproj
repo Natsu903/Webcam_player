@@ -102,6 +102,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="xcamear_config.cpp" />
     <QtRcc Include="webcam_player.qrc" />
     <QtUic Include="webcam_player.ui" />
     <QtMoc Include="webcam_player.h" />
@@ -110,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="xcamear_config.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="webcam_player.rc" />
