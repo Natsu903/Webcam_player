@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "webcam_player", "webcam_player.vcxproj", "{0E9CC7DD-EAF2-47D0-8956-85AC5852427D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1FE4CF2C-1DE0-4954-A3EF-C04CC5D85482} = {1FE4CF2C-1DE0-4954-A3EF-C04CC5D85482}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xcodec", "..\..\..\ffmpeg-demo\src\xcodec\xcodec.vcxproj", "{1FE4CF2C-1DE0-4954-A3EF-C04CC5D85482}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{0E9CC7DD-EAF2-47D0-8956-85AC5852427D}.Debug|x64.Build.0 = Debug|x64
 		{0E9CC7DD-EAF2-47D0-8956-85AC5852427D}.Release|x64.ActiveCfg = Release|x64
 		{0E9CC7DD-EAF2-47D0-8956-85AC5852427D}.Release|x64.Build.0 = Release|x64
+		{1FE4CF2C-1DE0-4954-A3EF-C04CC5D85482}.Debug|x64.ActiveCfg = Debug|x64
+		{1FE4CF2C-1DE0-4954-A3EF-C04CC5D85482}.Debug|x64.Build.0 = Debug|x64
+		{1FE4CF2C-1DE0-4954-A3EF-C04CC5D85482}.Release|x64.ActiveCfg = Release|x64
+		{1FE4CF2C-1DE0-4954-A3EF-C04CC5D85482}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

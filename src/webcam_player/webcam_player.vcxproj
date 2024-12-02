@@ -66,7 +66,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\xcodec</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\xcodec;..\..\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>..\..\lib</AdditionalLibraryDirectories>
@@ -103,6 +103,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="xcamear_config.cpp" />
+    <ClCompile Include="xcamera_record.cpp" />
+    <ClCompile Include="xcamera_widget.cpp" />
     <QtRcc Include="webcam_player.qrc" />
     <QtUic Include="webcam_player.ui" />
     <QtMoc Include="webcam_player.h" />
@@ -112,6 +114,8 @@
   <ItemGroup>
     <ClInclude Include="resource.h" />
     <ClInclude Include="xcamear_config.h" />
+    <ClInclude Include="xcamera_record.h" />
+    <QtMoc Include="xcamera_widget.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="webcam_player.rc" />

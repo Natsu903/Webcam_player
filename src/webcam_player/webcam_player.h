@@ -21,7 +21,16 @@ public:
     void resizeEvent(QResizeEvent* ev) override;
     void contextMenuEvent(QContextMenuEvent* event) override;
 
+    //显示预览相机窗口
     void View(int count);
+
+    //刷新左侧相机列表
+    void RefreshCams();
+
+	//编辑摄像机配置
+	void SetCam(int index);
+
+    void timerEvent(QTimerEvent* ev) override;
 
 public slots:
     void MaxWindow();
@@ -31,6 +40,13 @@ public slots:
     void View4();
     void View9();
     void View16();
+
+    //新增摄像机配置
+    void AddCam();
+    //修改摄像机配置
+    void SetCam();
+    //删除摄像机配置
+    void DelCam();
 
 private:
     Ui::Webcam_playerClass ui;

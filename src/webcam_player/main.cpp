@@ -2,12 +2,16 @@
 #include "xcamear_config.h"
 #include <QtWidgets/QApplication>
 #include <qDebug>
+#include <QDir>
+#include "xcamera_record.h"
 
-#define TEST_CAM_PATH "test.db"
+//#define TEST_CAM_PATH "test.db"
+#define TEST_URL "rtsp://127.0.0.1:8554/test"
+#define RTSP_URL "rtsp://admin:GZH&password@192.168.31.234:554/Streaming/Channels/101"
 
 int main(int argc, char *argv[])
 {
-	auto* xc = XCameraConfig::Instance();
+	/*auto* xc = XCameraConfig::Instance();
 	xc->Load(TEST_CAM_PATH);
     {
 		XCameraData cd;
@@ -53,15 +57,21 @@ int main(int argc, char *argv[])
 		auto cam = xc->GetCam(i);
 		qDebug() << cam.name;
 	}
+	xc->DelCam(0);*/
 
-	cam_count = xc->GetCamCount();
-	for (int i = 0; i < cam_count; i++)
-	{
-		auto cam = xc->GetCam(i);
-		qDebug() << cam.name;
-	}
+	const char* save_path = "./video/0/";
+	QDir dir;
+	dir.mkpath(save_path);
+
+	XCameraRecord xr;
+	xr.set_rtsp_url(RTSP_URL);
+	xr.set_save_path(save_path);
+	xr.Start();
+
     QApplication a(argc, argv);
     Webcam_player w;
     w.show();
-    return a.exec();
+    auto re = a.exec();
+	xr.Stop();
+	return re;
 }
